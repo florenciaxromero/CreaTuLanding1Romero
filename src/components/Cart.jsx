@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { CartContext } from '../context/CartContext';
 import { Link } from 'react-router-dom';
+import CheckoutForm from './CheckoutForm';
 
 const Cart = () => {
   const { cart, removeFromCart, clearCart, getTotalPrice } = useContext(CartContext);
@@ -50,6 +51,9 @@ const Cart = () => {
       <button className="btn btn-warning mt-3" onClick={clearCart}>
         Vaciar carrito
       </button>
+
+      {/* Aquí agregamos el formulario de checkout */}
+      <CheckoutForm />
     </div>
   );
 };

@@ -1,0 +1,70 @@
+/* NavBar.css */
+.custom-navbar {
+  background-color: #fefefe;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.brand-text {
+  font-weight: 700;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.nav-link {
+  margin-right: 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #555 !important;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #ff7e7e !important;
+}
+
+.cart-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  color: #333;
+  text-decoration: none;
+}
+
+.cart-icon {
+  font-size: 1.6rem;
+  color: #333;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  background-color: #ff7e7e;
+  color: white;
+  font-size: 0.75rem;
+  padding: 2px 6px;
+  border-radius: 50%;
+  font-weight: 600;
+}
+
+.custom-navbar {
+  background-color: #fefefe;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  position: sticky; 
+  top: 0;           
+  z-index: 1030;    
+}
+.item-card {
+  max-width: 300px; /* o 280px, o lo que quieras */
+  margin: auto; /* para centrarla en la columna */
+  height: auto; /* que no se estire */
+  border-radius: 0.75rem;
+  background-color: #ffffff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}

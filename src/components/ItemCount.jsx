@@ -12,18 +12,36 @@ const ItemCount = ({ stock, initial, onAdd }) => {
   };
 
   return (
-    <div className="d-flex flex-column align-items-center gap-2 mt-3">
-      <div className="btn-group" role="group">
-        <button className="btn btn-outline-secondary" onClick={decrease}>-</button>
-        <button className="btn btn-outline-secondary" disabled>{count}</button>
-        <button className="btn btn-outline-secondary" onClick={increase}>+</button>
+    <div className="d-flex flex-column align-items-center gap-3 mt-4">
+      <div className="btn-group" role="group" aria-label="Contador de unidades">
+        <button 
+          className="btn btn-outline-primary" 
+          onClick={decrease} 
+          aria-label="Disminuir cantidad"
+          disabled={count === 1}
+        >
+          &minus;
+        </button>
+        <button className="btn btn-outline-primary" disabled aria-live="polite" aria-atomic="true">
+          {count}
+        </button>
+        <button 
+          className="btn btn-outline-primary" 
+          onClick={increase} 
+          aria-label="Aumentar cantidad"
+          disabled={count === stock}
+        >
+          &#43;
+        </button>
       </div>
       <button
-        className="btn btn-success mt-2"
+        className="btn btn-primary w-100"
         onClick={() => onAdd(count)}
         disabled={stock === 0}
+        aria-disabled={stock === 0}
+        aria-label="Agregar producto al carrito"
       >
-        Agregar al carrito
+        {stock === 0 ? 'Sin stock' : 'Agregar al carrito'}
       </button>
     </div>
   );

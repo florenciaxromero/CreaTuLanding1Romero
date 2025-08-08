@@ -10,19 +10,31 @@ const ItemDetailContainer = () => {
 
   useEffect(() => {
     setLoading(true);
-    getProductById(id).then(data => {
-      setProduct(data);
-      setLoading(false);
-    });
+    getProductById(id)
+      .then(data => {
+        if (data) {
+          setProduct(data);
+        } else {
+          setProduct(null);
+        }
+        setLoading(false);
+      })
+      .catch(() => {
+        setProduct(null);
+        setLoading(false);
+      });
   }, [id]);
 
-  return (
-    <div style={{ padding: '2rem', textAlign: 'center' }}>
-      {loading && <p>Cargando producto...</p>}
-      {!loading && product && <ItemDetail product={product} />}
-      {!loading && !product && <p>Producto no encontrado</p>}
-    </div>
-  );
+  if (loading) {
+    return <p style={{ padding: '2rem', textAlign: 'center' }}>Cargando producto...</p>;
+  }
+
+  if (!product) {
+    return <p style={{ padding: '2rem', textAlign: 'center' }}>Producto no encontrado</p>;
+  }
+
+  return <ItemDetail product={product} />;
 };
 
 export default ItemDetailContainer;
+
