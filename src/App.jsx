@@ -2,7 +2,7 @@ import './App.css';
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import NavBar from './components/NavBar';  // importás NavBar acá, no lo definís
+import NavBar from './components/NavBar';  
 import ItemListContainer from './containers/ItemListContainer';
 import ItemDetailContainer from './containers/ItemDetailContainer';
 import Cart from './components/Cart';
@@ -11,7 +11,7 @@ import CheckoutForm from './components/CheckoutForm';
 const App = () => {
   return (
     <BrowserRouter>
-      <NavBar /> {/* Usás NavBar, no lo redefinís */}
+      <NavBar /> 
       <Routes>
         <Route path="/" element={<ItemListContainer greeting="¡Bienvenidos a nuestra tienda online!" />} />
         <Route path="/catalogo/:category?" element={<ItemListContainer />} />

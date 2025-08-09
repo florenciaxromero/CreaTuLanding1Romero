@@ -52,7 +52,6 @@ const Cart = () => {
         Vaciar carrito
       </button>
 
-      {/* Aquí agregamos el formulario de checkout */}
       <CheckoutForm />
     </div>
   );

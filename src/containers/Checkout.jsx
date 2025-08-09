@@ -7,7 +7,7 @@ const Checkout = () => {
   const [orderId, setOrderId] = useState(null);
 
   const onSubmit = (dataCliente) => {
-    // Simulación generación ID de orden (podés cambiar por lógica real)
+    
     const idGenerado = 'ORD-' + Math.floor(Math.random() * 1000000);
     setOrderId(idGenerado);
     clearCart();
